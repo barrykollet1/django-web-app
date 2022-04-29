@@ -2,8 +2,8 @@
 {% block content %}
     <h1>Liste des produits</h1>
     <ul>
-    {% for elem in liste%}
-        <li>{{elem.title}}</li>
+    {% for list_elem in liste%}
+        <li><a href="{% url 'listing-detail' list_elem.id %}">{{list_elem.title}}</a></li>
     {% endfor %}
     </ul>
 {% endblock %}}

@@ -1,0 +1,12 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h2>{{ list_elem.title | upper }}</h2>
+
+<ul>
+ <li>Titre : {{ list_elem.title }}</li>
+ <li>Band : {{ list_elem.band }}</li>
+</ul>
+
+{% endblock %}
