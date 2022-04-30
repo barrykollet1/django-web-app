@@ -1,6 +1,7 @@
 {% extends 'listings/base.html' %}
 {% block content %}
     <h1>Liste des produits</h1>
+    <a href="{% url 'listing-creation' %}">Créer un nouveau produit</a>
     <ul>
     {% for list_elem in liste%}
         <li><a href="{% url 'listing-detail' list_elem.id %}">{{list_elem.title}}</a></li>

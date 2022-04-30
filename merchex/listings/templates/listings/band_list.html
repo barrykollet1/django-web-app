@@ -2,6 +2,7 @@
 
 {% block content %}
     <h1>Groupes</h1>
+    <a href="{% url 'band-creation' %}">Créer un nouveau groupe</a>
     <p>Mes groupes préférés sont:</p>
     <ul>
     {% for band in bands %}

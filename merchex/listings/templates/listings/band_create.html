@@ -1,13 +1,11 @@
 {% extends 'listings/base.html' %}
-{% block content %}
-    <h1>Pour nous contacter</h1>
-    <p>Nous sommes à votre disposition !</p>
 
+{% block content %}
+    <h1>Ajouter Un groupe</h1>
     <form action="" method="post">
         <table>
         {% csrf_token %}
         {{ form.as_table }}
-
         <tr>
             <td></td>
             <td><input type="submit" value="Valider"></td>
