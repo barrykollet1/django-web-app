@@ -4,9 +4,13 @@
     <a href="{% url 'listing-creation' %}">Créer un nouveau produit</a>
     <ul>
     {% for list_elem in liste%}
-        <li><a href="{% url 'listing-detail' list_elem.id %}">{{list_elem.title}}</a></li>
+        <li>
+            <a href="{% url 'listing-detail' list_elem.id %}">{{list_elem.title}}</a>
+             - <a href="{% url 'listing-update' list_elem.id %}">[Editer]</a>
+        </li>
     {% endfor %}
     </ul>
+
 {% endblock %}}
 
 

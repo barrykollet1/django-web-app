@@ -1,0 +1,14 @@
+{% extends 'listings/base.html' %}
+{%  block content%}
+        <h1>Mis à jour de l'annonce</h1>
+        <form action="" method="post">
+        <table>
+        {% csrf_token %}
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Mis à jour"></td>
+        </tr>
+        </table>
+    </form>
+{% endblock %}

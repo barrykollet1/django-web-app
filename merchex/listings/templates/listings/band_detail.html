@@ -9,10 +9,16 @@
  <li>Année de formation : {{ band.year_formed }}</li>
  <li>Actif : {{ band.active | yesno }}</li>
  {% if band.official_homepage %}
- <li><a href="{{ band.official_homepage }}">{{ band.official_homepage }}</a></li>
+ <li>
+  <a href="{{ band.official_homepage }}">{{ band.official_homepage }}</a>
+ </li>
  {% endif %}
 </ul>
 
 <p>{{ band.biography }}</p>
+
+<a href="{% url 'band-update' band.id %}">Modifier ce groupe</a>
+<a href="">Supprimer ce groupe</a>
+<a href="{% url 'band-list' %}">Retourner à la liste des groupes</a>
 
 {% endblock %}

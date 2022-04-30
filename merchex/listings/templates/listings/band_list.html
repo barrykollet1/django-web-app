@@ -6,7 +6,10 @@
     <p>Mes groupes préférés sont:</p>
     <ul>
     {% for band in bands %}
-        <li><a href="{% url 'band-detail' band.id %}">{{band.name|upper}}</a></li>
+        <li>
+            <a href="{% url 'band-detail' band.id %}">{{band.name|upper}}</a>
+          - <a href="{% url 'band-update' band.id %}">[Editer]</a>
+        </li>
     {% endfor %}
     </ul>
 

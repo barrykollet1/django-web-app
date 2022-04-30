@@ -32,11 +32,25 @@ def band_create(request):
             # redirige vers la page de détail du groupe que nous venons de créer
             # nous pouvons fournir les arguments du motif url comme arguments à la fonction de redirection
             return redirect('band-detail', band.id)
-
     else:
         form = BandForm()
 
     return render(request, 'listings/band_create.html', {'form': form})
+
+
+def band_update(request, band_id):
+    band = Band.objects.get(id=band_id)
+
+    if request.method == 'POST':
+        form = BandForm(request.POST, instance=band)
+        # mettre à jour le groupe existant dans la base de données
+        form.save()
+        # rediriger vers la page détaillée du groupe que nous venons de mettre à jour
+        return redirect('band-detail', band.id)
+    else:
+        form = BandForm(instance=band)
+
+    return render(request, 'listings/band_update.html', {'form': form})
 
 
 def about(request):
@@ -62,6 +76,21 @@ def listing_create(request):
     else:
         form = ListingForm()
     return render(request, 'listings/listing_create.html', {'form': form})
+
+
+def listing_update(request, id_list):
+    listing = Listing.objects.get(id=id_list)
+
+    if request.method == 'POST':
+        form = ListingForm(request.POST, instance=listing)
+        # mettre à jour le groupe existant dans la base de données
+        form.save()
+        # rediriger vers la page détaillée du groupe que nous venons de mettre à jour
+        return redirect('listing-detail', listing.id)
+    else:
+        form = ListingForm(instance=listing)
+
+    return render(request, 'listings/listing_update.html', {'form': form})
 
 
 def contact(request):

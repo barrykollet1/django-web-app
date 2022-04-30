@@ -2,11 +2,16 @@
 
 {% block content %}
 
-<h2>{{ list_elem.title | upper }}</h2>
+    <h2>{{ list_elem.title | upper }}</h2>
 
-<ul>
- <li>Titre : {{ list_elem.title }}</li>
- <li>Band : {{ list_elem.band }}</li>
-</ul>
+    <ul>
+     <li>Titre : {{ list_elem.title }}</li>
+     <li>Band : {{ list_elem.band }}</li>
+    </ul>
+
+    <br>
+    <a href="{% url 'listing-update' list_elem.id %}">Modifier cette annonce</a>
+    <a href="">Supprimer cette annonce</a>
+    <a href="{% url 'listing-list' %}">Retourner à la liste des annonces</a>
 
 {% endblock %}
