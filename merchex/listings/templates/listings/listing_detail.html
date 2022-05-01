@@ -11,7 +11,7 @@
 
     <br>
     <a href="{% url 'listing-update' list_elem.id %}">Modifier cette annonce</a>
-    <a href="">Supprimer cette annonce</a>
+    <a href="{% url 'listing-delete' list_elem.id %}">Supprimer cette annonce</a>
     <a href="{% url 'listing-list' %}">Retourner à la liste des annonces</a>
 
 {% endblock %}
